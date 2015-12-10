@@ -8,21 +8,31 @@
 
 import Alamofire
 
+private var spinCount: Int = 0
+
 extension Request {
     
-    func spinner() -> Self {
-        return startSpinner().stopSpinner()
+    public func spin() -> Self {
+        return startSpin().stopSpin()
     }
     
-    func startSpinner() -> Self {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    public func startSpin() -> Self {
+        if spinCount == 0 {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        }
+        
+        spinCount = spinCount.successor()
         
         return self
     }
     
-    func stopSpinner() -> Self {
+    public func stopSpin() -> Self {
         response { response in
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            spinCount = spinCount.predecessor()
+            
+            if spinCount == 0 {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            }
         }
         
         return self

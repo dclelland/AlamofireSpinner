@@ -14,4 +14,3 @@ Tiny Alamofire plugin that starts and stops the network activity indicator.
 - Documentation
 - Examples
 - Rationale, sources
-- Should be smart enough to support simultaneous requests
