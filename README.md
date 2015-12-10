@@ -11,6 +11,5 @@ Tiny Alamofire plugin that starts and stops the network activity indicator.
 
 ### Wishlist
 
-- Documentation
 - Examples
 - Rationale, sources
