@@ -18,4 +18,4 @@ That's it!
 
 ### Wishlist
 
-- Need to check whether setting `spinCount` like that (see `Alamofire.swift`) is thread-safe; I can't seem to get a straight answer on what the equivalent of `@synchronized` is in swift; I welcome anybody's feedback.
+- Need to check whether setting `spinCount` like that (see `AlamofireSpinner.swift`) is thread-safe; I can't seem to get a straight answer on what the equivalent of `@synchronized` is in swift; I welcome anybody's feedback.
