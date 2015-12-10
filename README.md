@@ -4,7 +4,7 @@ Tiny Alamofire plugin that starts and stops the network activity indicator.
 
 ### Examples
 
-✓ Extremely simple, just call `spin()` on your request
+✓ Extremely simple, just call `spin()` on your request.
 
 ```swift
 
@@ -13,6 +13,8 @@ Alamofire.request(.GET, "http://myapi.com/users").spin().responseJSON { response
 }
 
 ```
+
+That's it!
 
 ### Wishlist
 
