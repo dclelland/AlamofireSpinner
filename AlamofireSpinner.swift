@@ -10,10 +10,10 @@ import Alamofire
 
 // MARK: AlamofireSpinner extension
 
-/// The global spin counter. I'm not 100% sure how thread safe this is.
+/// The global spin counter.
 private var spinCount: Int32 = 0
 
-extension Request {
+extension DataRequest {
     
     /// Starts the network activity indicator when a request starts and stops it again when all requests are finished.
     public func spin() -> Self {
@@ -23,7 +23,7 @@ extension Request {
     /// Starts the network activity indicator when a request starts.
     public func startSpin() -> Self {
         if OSAtomicIncrement32Barrier(&spinCount) > 0 {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
         }
         
         return self
@@ -33,7 +33,7 @@ extension Request {
     public func stopSpin() -> Self {
         response { response in
             if OSAtomicDecrement32Barrier(&spinCount) == 0 {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
         

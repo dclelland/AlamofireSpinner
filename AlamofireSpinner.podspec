@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.source_files        = 'AlamofireSpinner.swift'
   s.requires_arc            = true
   
-  s.dependency 'Alamofire', '~> 3.1'
+  s.dependency 'Alamofire', '~> 4.0'
 
   s.deprecated              = true
   s.deprecated_in_favor_of  = 'AlamofireNetworkActivityIndicator'
